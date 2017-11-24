@@ -1,4 +1,9 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-from Golden import views
+app.config.from_object('config')
+db = SQLAlchemy(app)
+
+
+from Golden import models,views
