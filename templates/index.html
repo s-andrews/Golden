@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Golden</h1>
+
+<table>
+  <tr>
+    <th>Study</th>
+    <th>Date</th>
+    <th>Title</th>
+  </tr>
+
+  {% for study in studies %}
+  <tr>
+    <td>{{ study.name }}</td>
+    <td>{{ study.date }}</td>
+    <td>{{ study.title }}</td>
+  </tr>      
+  {% endfor %}
+
+</table>
+{% endblock %}

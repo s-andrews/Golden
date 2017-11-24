@@ -1,0 +1,30 @@
+<html>
+  <head>
+    {% if title %}
+    <title>Golden - {{ title }}</title>
+    {$ else %}
+    <title>Golden - a public sequence data management system</title>
+    {% endif %}
+  </head>
+
+  <body>
+
+    <div id="header">
+      <!-- Put some header stuff here -->
+      <p>This is a header</p>
+    </div>
+
+    <div id="content">
+    {% block content %}{% endblock content %}
+    </div>
+
+
+    <div id="footer">
+      <!-- Put some footer stuff here -->
+      <p>This is a footer</p>
+    </div>
+
+  </body>
+
+
+</html>
