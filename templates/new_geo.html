@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Add new dataset</h1>
+
+<form action="" method="post" name="new_geo">
+
+  {{ form.hidden_tag() }}
+
+  <p>GEO Accession {{ form.accession(size=20) }} <input type="submit" value="Search"></p>
+
+</form>
+
+
+{% if study %}
+
+<h2>New Study {{ study.accession }}</h2>
+
+
+<p><strong>Title:</strong> {{ study.title }}</p>
+
+<p><strong>Summary:</strong> {{ study.summary }}</p>
+
+<p><strong>Type:</strong> {{ study.type }}</p>
+
+<table>
+  <tr>
+    <th>Accession</th>
+    <th>SRA</th>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Summary</th>
+  </tr>
+
+  {% for sample in study.all_samples() %}
+
+  <tr>
+    <td>{{ sample.accession }}</td>
+    <td>{{ sample.sra_accession }}</td>
+    <td>{{ sample.name }}</td>
+    <td>{{ sample.species }}</td>
+    <td>{{ sample.summary }}</td>
+  </tr>
+
+  {% endfor %}
+
+</table>
+
+
+{% endif %}
+
+
+{% endblock %}
