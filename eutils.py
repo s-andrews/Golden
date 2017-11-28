@@ -21,7 +21,7 @@ class GEODataSet:
         # details query later on.
         eutilAccessions = []
 
-        with urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={}&field=GEO%20Accession'.format(accession)) as response:
+        with urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term={}&field=GEO%20Accession&retmax=500'.format(accession)) as response:
             gdsXML = ElementTree.fromstring(response.read())
             for child in gdsXML:
                 if child.tag == 'IdList':
@@ -35,7 +35,7 @@ class GEODataSet:
 
 
         # We can now do the second query against esummary
-        with urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id={}'.format(','.join(str(uid) for uid in eutilAccessions))) as response:
+        with urllib.request.urlopen('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id={}&retmax=500'.format(','.join(str(uid) for uid in eutilAccessions))) as response:
             uidXML = ElementTree.fromstring(response.read())
 
         for document in uidXML:
