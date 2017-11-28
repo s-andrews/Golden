@@ -18,7 +18,7 @@ def add():
     form = NewGEOForm()
     if form.validate_on_submit():
         return render_template('new_geo.html',
-                               title='Add AOSIDOASIUD',
+                               title='Add {}'.format(form.accession.data),
                                form=form,
                                study=GEODataSet(form.accession.data))
 

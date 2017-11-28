@@ -7,22 +7,29 @@
     {% endif %}
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
   </head>
-
   <body>
-
-    <div id="header">
+    <div class="header">
       <!-- Put some header stuff here -->
-      <p>This is a header</p>
+      <h1>Golden Retriever - Public Sequence Management</h1>
     </div>
 
-    <div id="content">
+
+    <div class="toolbar">
+      <ul>
+	<li><a href="{{ url_for('index') }}">Home</a></li>
+	<li><a href="{{ url_for('index') }}">Search</a></li>
+	<li><a href="{{ url_for('add') }}">Add New</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
     {% block content %}{% endblock content %}
     </div>
 
 
-    <div id="footer">
+    <div class="footer">
       <!-- Put some footer stuff here -->
-      <p>This is a footer</p>
+      <p>Golden version 0.1.devel - Any problems, contact Simon Andrews</p>
     </div>
 
   </body>

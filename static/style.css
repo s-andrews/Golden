@@ -1,22 +1,62 @@
 body {
-	font-family: sans-serif; 
-	background: #FFFFFF;
+    font-family: sans-serif; 
+    background: #FFFFFF;
+    margin: 0;
+    border: 0;
 }
 
 th {
-	background: #333333;
-	color: #FFFFFF;
-	padding: 0.5em;
+    background: #cc6600;
+    color: #FFFFFF;
+    padding: 0.5em;
 }
 
 td {
-	background: #CCCCCC;
-	padding: 0.5em;
+    background: #FFCC99;
+    padding: 0.5em;
 }
 
 table {
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+div.toolbar {
+    background: #CCCCB3;
+    border: 0;
+    margin: 0;
+    padding: 0.5em;
+}
 
+div.toolbar li {
+    display: inline;
+    padding: 1em;
+    font-weight: bold;
+}
+
+div.header {
+    margin: 0;
+    border: 0;
+    background: #CFCFD1;
+    padding: 2.5em;
+    background-image: url('/static/retriever_small.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+div.footer {
+    margin: 0;
+    border: 0;
+    background: #CFCFD1;
+    padding: 0.2em;
+    padding-left: 1em;
+
+}
+
+div.content {
+    margin: 1em;
+}
+
+div.content h1 {
+    text-align: center;
+}
